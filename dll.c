@@ -12,7 +12,7 @@ void gen_weak_checksums(uint8_t *large_win, int offs, int nrep, int *checksums, 
     for (int i = 1; i <= nrep; i++,new++,removed++) {
         *a += (*new) - (*removed);
         *b += *a - (*removed) * blksize;
-        * checksum ++ = ((*b++) % ADLER_PRIME)<<16 | 
+        * checksum ++ = ((*b++) % ADLER_PRIME)<<16 | ((*a++) % ADLER_PRIME)
     }
     
 }
